@@ -1,3 +1,4 @@
-<p>
-  viewer works!
-</p>
+<div>
+  <div *ngIf='history.length == 0'>Loading viewer...</div>
+  <div *ngIf='history.length > 0'>Viewer: {{history[0].name}}</div>
+</div>

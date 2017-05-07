@@ -9,18 +9,26 @@ import { PokemonService } from './pokemon.service';
 })
 export class AppComponent implements OnInit {
   errorMessage: string;
-  pokemonList: string[];
+  pokemonList: string[] = [];
+  history: IPokemon[] = [];
+
+  selected: string;
 
   constructor(private pokemonService: PokemonService) { }
 
   ngOnInit() {
-    this.getPokemon();
+    this.getPokemonList();
+    const random = Math.floor(Math.random() * 151);
+    this.getPokemon(random.toString());
   }
 
-  getPokemon() {
+  public getPokemon(id: string) {
+    this.pokemonService.getPokemon(id)
+      .subscribe((pokemon) => (this.history.push(pokemon)), (error) => (this.errorMessage = <any>error));
+  }
+
+  private getPokemonList() {
     this.pokemonService.getAllPokemon()
-      .subscribe((pokemonList) => (this.pokemonList = pokemonList), (error) => (this.errorMessage = <any>error))
+      .subscribe((pokemonList) => (this.pokemonList = pokemonList), (error) => (this.errorMessage = <any>error));
   }
-
-  title = 'app works!';
 }

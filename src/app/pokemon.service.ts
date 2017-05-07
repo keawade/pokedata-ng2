@@ -18,7 +18,7 @@ export class PokemonService {
   }
 
   public getPokemon(id): Observable<IPokemon> {
-    return this.http.get(this.pokemonUrl)
+    return this.http.get(`${this.pokemonUrl}/${id}`)
       .map(this.extractData)
       .catch(this.handleError);
   }

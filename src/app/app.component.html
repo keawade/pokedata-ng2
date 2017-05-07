@@ -1,3 +1,5 @@
-<app-search [pokemonList]="pokemonList"></app-search>
-<app-viewer></app-viewer>
-<app-history></app-history>
+<div class='container'>
+  <app-search [pokemonList]="pokemonList"></app-search>
+  <app-viewer [history]="history"></app-viewer>
+  <app-history [history]="history"></app-history>
+</div>
