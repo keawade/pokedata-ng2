@@ -2,7 +2,7 @@
 interface IPokemon {
   id: number;
   name: string;
-  types: IPokemonType[];
+  types: string[];
   height: number;
   weight: number;
   sprites: IPokemonSprites;
@@ -17,11 +17,6 @@ interface IPokemonSprites {
   back_shiny: string;
   back_female: string;
   back_shiny_female: string;
-}
-
-interface IPokemonType {
-  slot: number,
-  type: INamedAPIResource
 }
 
 interface IType {

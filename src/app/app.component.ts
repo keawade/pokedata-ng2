@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.getPokemonList();
-    const random = Math.floor(Math.random() * 151);
+    const random = Math.floor(Math.random() * 150) + 1;
     this.getPokemon(random.toString());
   }
 

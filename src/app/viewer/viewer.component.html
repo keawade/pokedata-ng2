@@ -1,4 +1,6 @@
-<div>
-  <div *ngIf='history.length == 0'>Loading viewer...</div>
-  <div *ngIf='history.length > 0'>Viewer: {{history[0].name}}</div>
+<div class='app-viewer'>
+  <div *ngIf='current === undefined'>Loading...</div>
+  <div *ngIf='current !== undefined'>
+    <h1>#{{current.id}} - {{current.name}}</h1>
+  </div>
 </div>
