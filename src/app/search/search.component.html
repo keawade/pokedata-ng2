@@ -1,5 +1,13 @@
 <p>
-  <label for="typeahead-basic">Search for a pokemon:</label>
-  <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="searchText" [ngbTypeahead]="search" [resultFormatter]="formatter"
-  />
+  <input
+    id="typeahead-basic"
+    type="text"
+    class="form-control"
+    [(ngModel)]="searchText"
+    [ngbTypeahead]="search"
+    [resultFormatter]="formatter"
+    [inputFormatter]="formatter"
+    (selectItem)="select($event)"
+    showHint=true
+    />
 </p>

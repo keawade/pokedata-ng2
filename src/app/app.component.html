@@ -1,5 +1,5 @@
 <div class='container'>
-  <app-search [pokemonList]="pokemonList"></app-search>
+  <app-search [pokemonList]="pokemonList" (selectItem)='select($event)'></app-search>
   <app-viewer [history]="history"></app-viewer>
   <app-history [history]="history"></app-history>
 </div>
