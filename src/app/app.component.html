@@ -1,4 +1,5 @@
 <div class='container app'>
+  <div class='alert alert-warning'><strong>Note:</strong> The source server for this data may take a while to resume after long periods of inactivity.</div>
   <app-search [pokemonList]="pokemonList" (selectItem)='select($event)'></app-search>
   <app-viewer [current]="history[0]"></app-viewer>
   <app-history [history]="history"></app-history>

@@ -6,6 +6,18 @@ interface IPokemon {
   height: number;
   weight: number;
   sprites: IPokemonSprites;
+  typeData: [{
+    id: number;
+    name: string;
+    noDamageFrom: string[];
+    halfDamageFrom: string[];
+    doubleDamageFrom: string[];
+    noDamageTo: string[];
+    halfDamageTo: string[];
+    doubleDamageTo: string[];
+    generation: string
+    move_damage_class: string;
+  }];
 }
 
 interface IPokemonSprites {
@@ -17,31 +29,4 @@ interface IPokemonSprites {
   back_shiny: string;
   back_female: string;
   back_shiny_female: string;
-}
-
-interface IType {
-  id: number;
-  name: string;
-  damage_relations: {
-    no_damage_to: INamedAPIResource[];
-    half_damage_to: INamedAPIResource[];
-    double_damage_to: INamedAPIResource[];
-    no_damage_from: INamedAPIResource[];
-    half_damage_from: INamedAPIResource[];
-    double_damage_from: INamedAPIResource[];
-  }
-  generation: INamedAPIResource
-  move_damage_class: INamedAPIResource;
-}
-
-interface IResultList {
-  count: number;
-  next: string;
-  previous: string;
-  results: INamedAPIResource[];
-}
-
-interface INamedAPIResource {
-  name: string;
-  url: string;
 }

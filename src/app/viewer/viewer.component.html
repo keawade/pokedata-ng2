@@ -1,6 +1,20 @@
 <div class='app-viewer'>
-  <div *ngIf='current === undefined'>Loading...</div>
-  <div *ngIf='current !== undefined'>
-    <h1>#{{current.id}} - {{current.name}}</h1>
+  <div *ngIf='current === undefined' class='alert alert-info'>Loading...</div>
+  <div *ngIf='current !== undefined' class='card'>
+    <h1 class='viewer-header'>#{{current.id}} - {{current.name}}</h1>
+    <div class='viewer-details'>
+      <img class='viewer-details-image' src='{{image}}' alt='{{current.name}}' />
+      <div class='viewer-details-data'>
+        <h4>Type</h4>
+        <div *ngFor='let type of current.types'>{{type}}</div>
+        <h4>Weaknesses</h4>
+        <div *ngFor='let type of weaknesses'>{{type}}</div>
+        <h4>Resistances</h4>
+        <div *ngFor='let type of resistances'>{{type}}</div>
+        <h4>Immunities</h4>
+        <div *ngFor='let type of immunities'>{{type}}</div>
+      </div>
+    </div>
+    <div class='viewer-footer'>Fork this project on <a href='https://github.com/keawade/pokedata-ng2' target='_blank'>GitHub</a>!</div>
   </div>
 </div>

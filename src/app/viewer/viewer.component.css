@@ -1,6 +1,31 @@
 .app-viewer {
   margin: 1rem 0;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
+}
+
+.app-viewer .viewer-header {
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.app-viewer .viewer-details {
+  display: flex;
+  align-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.app-viewer .viewer-details .viewer-details-image {
+  width: 50%;
+  height: auto;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.app-viewer .viewer-details .viewer-details-data {
+}
+
+.app-viewer .viewer-footer {
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
 }
